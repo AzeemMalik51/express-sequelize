@@ -11,10 +11,10 @@ var Acl = require('../utils/access_control/authorize');
 passport.use(new BearerStrategy(UserController.findByToken));
 var tokenAuth = passport.authenticate('bearer', {
     session: false
-});*//*
+});*/
+/*
 
-router.route('/account/login')
-    .post(UserController.login);
+
 router.route('/account/forget-password')
     .post(UserController.forgetPassword);
 
@@ -27,8 +27,13 @@ router.route('/account/logout')
 router.route('/account/users/password')
     .put(UserController.changePassword);*/
 
+router.route('/account/login')
+    .post(UserController.login);
+
+router.route('/account/signup')
+    .post(UserController.signUp);
+
 router.route('/users')
-    .get(UserController.getUsers)
     .post(UserController.createUser);
 /*
 router.route('/users/role/:userId')
